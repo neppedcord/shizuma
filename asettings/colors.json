@@ -1,0 +1,8 @@
+{
+    "client": {
+        "main" : "#f1cc7c",
+        "error" : "#f36c6c",
+        "success" : "#6be35b",
+        "warning" : "#fcc465"
+    }
+}

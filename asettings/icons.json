@@ -1,0 +1,31 @@
+{
+  "client": {
+      "robot" : "https://cdn.discordapp.com/attachments/762217988451074069/762223852574736394/robot.png"
+  },
+  "user": {
+    "user.gray" : "",
+    "user.red" : "",
+    "user.green" : "",
+    "user.yellow" : "",
+    "user.dev" : "",
+    "user.partner" : "",
+    "user.donator" : ""
+  },
+  "server" : {
+      "server.gray" : "",
+      "server.red" : "",
+      "server.green" : "",
+      "server.yellow" : "",
+      "server.dev" : "",
+      "server.boosted" : "",
+      "server.partner" : ""
+  },
+  "icons_oth" : {
+      "cmd.icon" : "https://cdn.discordapp.com/attachments/762217988451074069/762218150019727380/cmd.png",
+      "dev.icon" : "",
+      "partner.icon" : "",
+      "booster.icon.lvl1" : "",
+      "booster.icon.lvl2" : "",
+      "booster.icon.server.boost" : ""
+  }
+}
