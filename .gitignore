@@ -1,0 +1,6 @@
+config.json
+LICENSE
+node_modules
+logs/
+package-lock.json
+.idea

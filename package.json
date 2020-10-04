@@ -1,0 +1,23 @@
+{
+  "name": "shizuma",
+  "version": "2.0.0",
+  "description": "This is a open-source discord project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/neppedboy/discord-shizuma.git"
+  },
+  "author": "neppedbou",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://gitlab.com/neppedboy/discord-shizuma/issues"
+  },
+  "homepage": "https://gitlab.com/neppedboy/discord-shizuma#readme",
+  "dependencies": {
+    "discord.js": "^12.2.0",
+    "superagent": "^6.1.0"
+  }
+}
