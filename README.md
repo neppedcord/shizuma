@@ -1,3 +1,3 @@
 # Shizuma
 
-This is a open-source discord project
+This is a open-source discord bot project
