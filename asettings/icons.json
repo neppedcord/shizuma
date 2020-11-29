@@ -1,31 +1,48 @@
 {
   "client": {
-      "robot" : "https://cdn.discordapp.com/attachments/762217988451074069/762223852574736394/robot.png"
+    "robot": "https://cdn.discordapp.com/attachments/762217988451074069/762223852574736394/robot.png",
+    "member": "",
+    "plus": "https://media.discordapp.net/attachments/762217988451074069/782587332833968148/sh_plus.png",
+    "owner": "https://cdn.discordapp.com/attachments/762217988451074069/782631387031142400/shizuma_owner.png",
+    "puzzle": "https://cdn.discordapp.com/attachments/762217988451074069/782639798317088798/shizuma_puzzle.png"
   },
   "user": {
-    "user.gray" : "",
-    "user.red" : "",
-    "user.green" : "",
-    "user.yellow" : "",
-    "user.dev" : "",
-    "user.partner" : "",
-    "user.donator" : ""
+    "user.gray": "",
+    "user.red": "",
+    "user.green": "",
+    "user.yellow": "",
+    "user.dev": "",
+    "user.partner": "",
+    "user.donator": ""
   },
-  "server" : {
-      "server.gray" : "",
-      "server.red" : "",
-      "server.green" : "",
-      "server.yellow" : "",
-      "server.dev" : "",
-      "server.boosted" : "",
-      "server.partner" : ""
+  "server": {
+    "server.gray": "",
+    "server.red": "",
+    "server.green": "",
+    "server.yellow": "",
+    "server.dev": "",
+    "server.boosted": "",
+    "server.partner": ""
   },
-  "icons_oth" : {
-      "cmd.icon" : "https://cdn.discordapp.com/attachments/762217988451074069/762218150019727380/cmd.png",
-      "dev.icon" : "",
-      "partner.icon" : "",
-      "booster.icon.lvl1" : "",
-      "booster.icon.lvl2" : "",
-      "booster.icon.server.boost" : ""
+  "icons_oth": {
+    "cmd.icon": "https://cdn.discordapp.com/attachments/762217988451074069/762218150019727380/cmd.png",
+    "dev.icon": "",
+    "partner.icon": ""
+  },
+  "sharp": {
+    "ratchet": {
+      "boosts": {
+        "level1": "https://cdn.discordapp.com/attachments/755096412039020636/766652857104465950/boost1.png",
+        "level2": "https://cdn.discordapp.com/attachments/755096412039020636/766652857146540032/boost2.png",
+        "level3": "https://cdn.discordapp.com/attachments/755096412039020636/766652857104990219/boost3.png"
+      }
+    },
+    "shizuma": {
+      "boosts": {
+        "lvl1": "",
+        "lvl2": "",
+        "boost": ""
+      }
+    }
   }
 }

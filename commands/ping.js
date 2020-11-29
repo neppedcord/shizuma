@@ -5,7 +5,9 @@ const asetsc = require("../asettings/colors.json");
 const asetsi = require("../asettings/icons.json");
 const asetse = require("../asettings/emojis.json");
 
-module.exports = class extends Command {
+module.exports = class extends (
+  Command
+) {
   get options() {
     return {
       enabled: true,
@@ -72,7 +74,7 @@ ${comps}`
     let embed = new MessageEmbed()
       .setAuthor(`Ошибка исполнения команды`, asetsi.icons_oth["cmd.icon"])
       .setDescription(
-        `Команда в данный момент недоступна по причине отключения разработчиком.`
+        `Команда в данный момент недоступна по причине отключения`
       )
       .setColor(asets.client.main);
     message.channel.send({ embed: embed });

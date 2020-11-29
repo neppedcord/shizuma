@@ -1,7 +1,9 @@
 const { Event } = require("discore.js");
 const pkg = require("../package.json");
 
-module.exports = class extends Event {
+module.exports = class extends (
+  Event
+) {
   get options() {
     return {};
   }
@@ -15,7 +17,7 @@ module.exports = class extends Event {
     AUTH | Версия Discore.js ${pkg.dependencies["discore.js"]}`);
     this.client.user.setPresence({
       activity: {
-        name: `s.help | ${this.client.guilds.cache.size} Серверов | ${this.client.users.cache.size} участников серверов`,
+        name: `Разработка продолжается | s.state | ${this.client.guilds.cache.size} Серверов | ${this.client.users.cache.size} участников`,
         type: "WATCHING",
       },
     });
