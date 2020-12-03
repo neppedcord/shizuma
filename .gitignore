@@ -1,6 +1,6 @@
-config.json
 LICENSE
 node_modules
 logs/
+config.json
 package-lock.json
 .idea
