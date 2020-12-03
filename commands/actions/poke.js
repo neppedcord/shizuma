@@ -9,9 +9,9 @@ module.exports = class extends (
   get options() {
     return {
       enabled: true,
-      name: "pat",
+      name: "poke",
       cooldown: 2000, // In milliseconds
-      aliases: ["погладить", "глядить-глядитьня", "няшить-гладить"],
+      aliases: ["тыкать", "тыкалка"],
       permLevel: 0,
     };
   }
@@ -23,20 +23,20 @@ module.exports = class extends (
           (m) => m.user.username == arg || m.id == arg || m.displayName == arg
         )
     );
-    if (!user) return message.channel.send("*в ожидании объятий*");
+    if (!user) return message.channel.send("ты тыкаешь пальцем? Но в кого?");
     if (user.user.id == message.member.id)
-      return message.reply(`*а можно мне также? :>*`);
+      return message.reply(`OvO`);
     if (user.user.id == this.client.user.id)
-      return message.reply(`<a:ash_hugheart:782575078596149260>`);
+      return message.reply(`Эээй, ты что делаешь?`);
 
-    superagent.get(`https://nekos.life/api/v2/img/pat`).then((body) => {
+    superagent.get(`https://nekos.life/api/v2/img/poke`).then((body) => {
       message.channel.send(
         new MessageEmbed()
           .setAuthor(
-            `${message.member.user.username} гладит ${user.user.username}`,
+            `${message.member.user.username} тыкает в ${user.user.username}`,
             asetsi.client["plus"]
           )
-          .setDescription(`Kawaaii!`)
+          .setDescription(`Что ты его тыкаешь та? >__<`)
           .setImage(body.body.url)
           .setColor(0xeece7e)
           .setFooter(

@@ -22,7 +22,8 @@ module.exports = class extends (
             (m) => m.user.username == arg || m.id == arg || m.displayName == arg
           )
       ) || message.member;
-    let description = `Форматы изображения: [PNG](${user.user.avatarURL({
+    let description = `|| Нахождение пользователей по нику, id и другому недоступны. Проблема интентов. ||
+  Форматы изображения: [PNG](${user.user.avatarURL({
       format: "png",
       size: 4096,
     })}), [JPG](${user.user.avatarURL({

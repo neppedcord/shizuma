@@ -9,6 +9,7 @@ module.exports = class extends (
   }
 
   run() {
+    this.client.generateInvite().then(inv => console.log(inv))
     console.log(`AUTH | Авторизация приложения....`);
     console.log(`AUTH | Имя приложения: ${this.client.user.username}
     AUTH | ID: ${this.client.user.id}
@@ -17,7 +18,7 @@ module.exports = class extends (
     AUTH | Версия Discore.js ${pkg.dependencies["discore.js"]}`);
     this.client.user.setPresence({
       activity: {
-        name: `Разработка продолжается | s.state | ${this.client.guilds.cache.size} Серверов | ${this.client.users.cache.size} участников`,
+        name: `Разработка продолжается | s.state | Ожидание верификации на интенты`,
         type: "WATCHING",
       },
     });

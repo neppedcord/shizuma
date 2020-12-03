@@ -1,7 +1,7 @@
 const { Command } = require("discore.js");
 const { MessageEmbed } = require("discord.js");
 let { token } = require("../config.json");
-let { admins } = require("../config.json");
+let { maintainers } = require("../config.json");
 
 module.exports = class extends (
   Command
@@ -16,7 +16,7 @@ module.exports = class extends (
     };
   }
   async run(message, args) {
-    if (!message.member.id.includes())
+    if (message.member.id.includes(maintainers)) {
       try {
         let toEval = args.join(" "),
           isAsync = false,
@@ -81,6 +81,7 @@ module.exports = class extends (
         if (err.length >= 1980) err = err.slice(0, 1980) + "...";
         message.reply(err), { code: "js" };
       }
+    };
   }
   disabledRun(message, args) {
     message.react("598495966613733376");
