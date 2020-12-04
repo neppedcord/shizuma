@@ -31,7 +31,7 @@ module.exports = class extends (
           .setColor(0xeece7e)
           .setFooter(
             `Powered by NeppedCord API » https://api-docs.neppedcord.top/`,
-            `https://media.discordapp.net/attachments/762217988451074069/784404416191004692/neppedcordapi.png`
+            `${asetsi.client.neppedapi}`
           )
       );
     });
