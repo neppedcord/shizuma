@@ -5,41 +5,28 @@ const asetsi = require("../../asettings/icons.json");
 const { neppedapitoken } = require("../../config.json")
 const nepsdk = require("neppedapi-js")
 const nepcli = new nepsdk(neppedapitoken)
-
+// imagesTypes = ['baka', 'cry', 'cuddle', 'happy', 'hug', 'kiss', 'sad', 'wag'];
 module.exports = class extends (
   Command
 ) {
   get options() {
     return {
       enabled: true,
-      name: "hug",
+      name: "happy",
       cooldown: 2000, // In milliseconds
-      aliases: ["обнимашки", "обнять", "поняшится-обнимашаться"],
+      aliases: ["веселяшка", "веселье"],
       permLevel: 0,
     };
   }
   async run(message, args) {
-    let arg = args.slice(0).join(" ");
-    let user = message.guild.member(
-      message.mentions.users.first() ||
-        message.guild.members.cache.find(
-          (m) => m.user.username == arg || m.id == arg || m.displayName == arg
-        )
-    );
-    if (!user) return message.channel.send("*в ожидании обнимашек*");
-    if (user.user.id == message.member.id)
-      return message.reply(`*я тоже хочу :>*`);
-    if (user.user.id == this.client.user.id)
-      return message.reply(`Ваййй! Спасибо тебе хозяйн <3`);
-
-      nepcli.images("hug").then((body) => {
+    nepcli.images("happy").then((body) => {
       message.channel.send(
         new MessageEmbed()
           .setAuthor(
-            `${message.member.user.username} обнимается с ${user.user.username}`,
+            `${message.member.user.username} испытывает веселяшку`,
             asetsi.client["plus"]
           )
-          .setDescription(`До чего хорошо! >w<`)
+          .setDescription(`>W<`)
           .setImage(body.url)
           .setColor(0xeece7e)
           .setFooter(
@@ -50,6 +37,7 @@ module.exports = class extends (
     });
   }
   disabledRun(message, args) {
+    message.react("598495966613733376");
     let embed = new MessageEmbed()
       .setAuthor(
         `Ошибка исполнения команды`,

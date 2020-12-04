@@ -2,6 +2,9 @@ const { Command } = require("discore.js");
 const { MessageEmbed, Message } = require("discord.js");
 const superagent = require("superagent");
 const asetsi = require("../../asettings/icons.json");
+const { neppedapitoken } = require("../../config.json")
+const nepsdk = require("neppedapi-js")
+const nepcli = new nepsdk(neppedapitoken)
 
 module.exports = class extends (
   Command
@@ -29,7 +32,7 @@ module.exports = class extends (
     if (user.user.id == this.client.user.id)
       return message.reply(`<a:ash_hugheart:782575078596149260>`);
 
-    superagent.get(`https://nekos.life/api/v2/img/cuddle`).then((body) => {
+    nepcli.images("cuddle").then((body) => {
       message.channel.send(
         new MessageEmbed()
           .setAuthor(
@@ -37,11 +40,11 @@ module.exports = class extends (
             asetsi.client["plus"]
           )
           .setDescription(`Просто замечательно! >w<`)
-          .setImage(body.body.url)
+          .setImage(body.url)
           .setColor(0xeece7e)
           .setFooter(
-            `Powered by nekos.life API » https://nekos.life/`,
-            `https://cdn.discordapp.com/attachments/762217988451074069/782569072181116928/nekochibi.png`
+            `Powered by NeppedCord API » https://api-docs.neppedcord.top/`,
+            `https://media.discordapp.net/attachments/762217988451074069/784404416191004692/neppedcordapi.png`
           )
       );
     });
