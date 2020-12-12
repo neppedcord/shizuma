@@ -58,8 +58,8 @@ module.exports = class extends (
           .setImage(body.url)
           .setColor(0xeece7e)
           .setFooter(
-            `Powered by nekos.life API » https://nekos.life/`,
-            `https://cdn.discordapp.com/attachments/762217988451074069/782569072181116928/nekochibi.png`
+            `Powered by NeppedCord API » https://api-docs.neppedcord.top/`,
+            `${asetsi.client.neppedapi}`
           )
       );
     });
