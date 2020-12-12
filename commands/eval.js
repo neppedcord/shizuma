@@ -64,13 +64,7 @@ module.exports = class extends (
           else evaled = evaled.slice(evaled.length - 1900);
         }
 
-        evaled =
-          "Выполнено за " +
-          (after - before) +
-          " наносекунд или " +
-          (parseInt(after - before) / 1000000).toFixed(3) +
-          "ms\n" +
-          evaled;
+        evaled = evaled + `\n\nExecuted in ${(parseInt(after - before) / 1000000).toFixed(2)}ms`;
 
         if (evaled.includes(this.client.token))
           return message.reply("Token included.");
