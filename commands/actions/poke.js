@@ -4,7 +4,7 @@ const superagent = require("superagent");
 const asetsi = require("../../asettings/icons.json");
 
 const { neppedapitoken } = require("../../config.json");
-const nepsdk = require("neppedapi-js");
+const nepsdk = require("neppedapi");
 const nepcli = new nepsdk(neppedapitoken);
 
 module.exports = class extends (
