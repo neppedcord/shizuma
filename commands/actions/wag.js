@@ -1,5 +1,5 @@
 const { Command } = require("discore.js");
-const { MessageEmbed, Message } = require("discord.js");
+const { MessageEmbed } = require("discord.js");
 const superagent = require("superagent");
 const asetsi = require("../../asettings/icons.json");
 const { neppedapitoken } = require("../../config.json")

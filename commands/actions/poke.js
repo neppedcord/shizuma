@@ -33,21 +33,7 @@ module.exports = class extends (
     if (user.user.id == this.client.user.id)
       return message.reply(`Эээй, ты что делаешь?`);
 
-    nepcli.images("poke").then((body) => {
-      if(body.error) {
-        message.react("598495966613733376");
-        let embed = new MessageEmbed()
-          .setAuthor(
-            `Ошибка исполнения команды`,
-            `https://cdn.discordapp.com/attachments/659404951851630593/738693119020761138/cmd.png`
-          )
-          .setDescription(
-            `Nep-nep? \`${body.error.message}\``
-          )
-          .setColor(`#585f63`);
-        message.channel.send({ embed: embed });
-      }
-      
+    nepcli.images("poke").then((body) => {      
       message.channel.send(
         new MessageEmbed()
           .setAuthor(

@@ -34,20 +34,6 @@ module.exports = class extends (
       return message.reply(`<a:ash_hugheart:782575078596149260>`);
 
     nepcli.images("pat").then((body) => {
-      if(body.error) {
-        message.react("598495966613733376");
-        let embed = new MessageEmbed()
-          .setAuthor(
-            `Ошибка исполнения команды`,
-            `https://cdn.discordapp.com/attachments/659404951851630593/738693119020761138/cmd.png`
-          )
-          .setDescription(
-            `Nep-nep? \`${body.error.message}\``
-          )
-          .setColor(`#585f63`);
-        message.channel.send({ embed: embed });
-      }
-      
       message.channel.send(
         new MessageEmbed()
           .setAuthor(
