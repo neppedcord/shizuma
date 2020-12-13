@@ -3,6 +3,10 @@ const { MessageEmbed, Message } = require("discord.js");
 const superagent = require("superagent");
 const asetsi = require("../../asettings/icons.json");
 
+const { neppedapitoken } = require("../../config.json");
+const nepsdk = require("neppedapi-js");
+const nepcli = new nepsdk(neppedapitoken);
+
 module.exports = class extends (
   Command
 ) {
@@ -29,7 +33,21 @@ module.exports = class extends (
     if (user.user.id == this.client.user.id)
       return message.reply(`Эээй, ты что делаешь?`);
 
-    superagent.get(`https://nekos.life/api/v2/img/poke`).then((body) => {
+    nepcli.images("poke").then((body) => {
+      if(body.error) {
+        message.react("598495966613733376");
+        let embed = new MessageEmbed()
+          .setAuthor(
+            `Ошибка исполнения команды`,
+            `https://cdn.discordapp.com/attachments/659404951851630593/738693119020761138/cmd.png`
+          )
+          .setDescription(
+            `Nep-nep? \`${body.error.message}\``
+          )
+          .setColor(`#585f63`);
+        message.channel.send({ embed: embed });
+      }
+      
       message.channel.send(
         new MessageEmbed()
           .setAuthor(
@@ -37,11 +55,11 @@ module.exports = class extends (
             asetsi.client["plus"]
           )
           .setDescription(`Что ты его тыкаешь та? >__<`)
-          .setImage(body.body.url)
+          .setImage(body.url)
           .setColor(0xeece7e)
           .setFooter(
-            `Powered by nekos.life API » https://nekos.life/`,
-            `https://cdn.discordapp.com/attachments/762217988451074069/782569072181116928/nekochibi.png`
+            `Powered by NeppedCord API » https://api-docs.neppedcord.top/`,
+            `${asetsi.client.neppedapi}`
           )
       );
     });
